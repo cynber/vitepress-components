@@ -1,7 +1,8 @@
 # vitepress-components
- Various custom vitepress components
 
-This repository is a collection of custom VitePress components that can be shared across multiple VitePress sites.
+This repository is a collection of custom VitePress components that can be shared across multiple VitePress sites. It currently exists solely for my personal use, but I am open to suggestions and improvements. In the future, I may create an NPM package for these components.
+
+If you would like to use these components in your own VitePress site, you can add this repository as a submodule. Please note that this repository is a work in progress and may change frequently. Similarly, you can use this repository as a template for your own shared components.
 
 Everything in this repository will be copied to the `docs/.vitepress/theme/components/cynber-shared` directory of a VitePress site. As such, it should contain only the components you want to share across multiple VitePress sites.
    
