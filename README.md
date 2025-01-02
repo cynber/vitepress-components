@@ -15,7 +15,7 @@ Overview:
     ...
 ```
 
-## Adding the Submodule to a VitePress Site
+## Add the Submodule to an existing VitePress Site
 
 1. **Navigate to Your VitePress Site Directory**:
 
@@ -33,10 +33,31 @@ git submodule update --init --recursive
 
 4. **Commit the Changes**
 
+### Updating the GitHub Pages deploy script
 
-## Using and Updating Submodules
+If you are using GitHub Pages to deploy your VitePress site, you will need to update the deploy script:
 
-**Cloning a new project**:
+Add `with: submodules: recursive` to the checkout step:
+``` yaml
+# ...
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+# ...
+```
+
+Add a step to initialize and update the submodules:
+``` yaml
+# ...
+      - name: Initialize and update submodules
+        run: |
+          git submodule update --init --recursive
+# ...
+```
+
+## Clone a VitePress Site with Submodules
 
 When cloning a VitePress site that includes submodules, remember to initialize them:
 
@@ -50,8 +71,10 @@ If you forgot to initialize the submodules when cloning, you can do so after clo
 git submodule update --init --recursive
 ```
 
-**After Cloning**:
+## Update the Submodule to the Latest Version
 
 ```bash
 git submodule update --remote
 ```
+
+
