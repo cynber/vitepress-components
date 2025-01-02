@@ -53,5 +53,5 @@ git submodule update --init --recursive
 **After Cloning**:
 
 ```bash
-git submodule update --remote docs/.vitepress/theme/components/cynber-shared
+git submodule update --remote
 ```
